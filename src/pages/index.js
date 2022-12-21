@@ -41,6 +41,10 @@ const linkStyles = {
 // data
 const links = [
   {
+    text: "Artists",
+    url: "artists",
+  },
+  {
     text: "Documentation",
     url: "https://www.gatsbyjs.com/docs/",
   },
