@@ -41,7 +41,7 @@ const linkStyles = {
 // data
 const links = [
   {
-    text: "Artists!",
+    text: "Artists!@",
     url: "artists",
   },
   {
