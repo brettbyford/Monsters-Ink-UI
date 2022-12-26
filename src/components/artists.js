@@ -29,7 +29,7 @@ const Artists = (props) => {
         if (artists) {
           return artists.map((artist) => {
             return (
-              <div key="{artist.name}">
+              <div key={artist.title}>
                 <ArtistMask profilePicture={artist.profilePicture.url} />
                 {artist.name}
               </div>

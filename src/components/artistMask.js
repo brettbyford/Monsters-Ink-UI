@@ -10,6 +10,7 @@ const ArtistMask = ({profilePicture}) => {
 				</mask>
 			</defs>
 			<image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlinkHref={profilePicture} mask="url(#shape-mask)"></image>
+			<circle id="border" cx="50" cy="50" r="49" fill="none" stroke="rgb(139, 24, 27)" strokeWidth="2"></circle>
 		</svg>
   )
 }
