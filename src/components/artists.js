@@ -2,7 +2,35 @@ import { graphql, StaticQuery } from "gatsby";
 import * as React from "react";
 import ArtistMask from "./artistMask";
 
+const artistsHeaderStyles = {
+  color: "#ffffff",
+  borderBottom: "1px solid rgb(139, 24, 27)"
+}
+
+const artistsContainerStyles = {
+  margin: "20px 0",
+  padding: "5px"
+}
+
+const artistStyles = {
+  margin: "2px 5px",
+  color: "#ffffff",
+  textAlign: "center",
+  float: "left"
+}
+
 const Artists = (props) => {
+  return (
+    <div>
+      <div style={artistsHeaderStyles}>Our Artists</div>
+      <div style={artistsContainerStyles}>
+        <ArtistsContainer />
+      </div>
+    </div>
+  )
+}
+
+const ArtistsContainer = (props) => {
   return (
     <StaticQuery
       query={graphql`
@@ -25,18 +53,19 @@ const Artists = (props) => {
       `}
       render={(data) => {
         const artists = cosmicToArtistsArray(data);
-        console.log(artists);
         if (artists) {
           return artists.map((artist) => {
             return (
-              <div key={artist.title}>
-                <ArtistMask profilePicture={artist.profilePicture.url} />
-                {artist.name}
+              <div key={artist.title} style={artistStyles}>
+                <div>
+                  <ArtistMask profilePicture={artist.profilePicture.url} />
+                </div>
+                <div>
+                  {artist.name}
+                </div>
               </div>
             );
           });
-        } else {
-          return <div>Something fucked up!</div>;
         }
       }}
     />
