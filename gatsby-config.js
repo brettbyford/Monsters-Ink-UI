@@ -1,5 +1,7 @@
 module.exports = {
   plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-cosmicjs",
       options: {
@@ -32,5 +34,28 @@ module.exports = {
         },
       }
     },
+    {
+      resolve: "gatsby-plugin-svgr-svgo",
+      options: {
+        inlineSvgOptions: [
+          {
+            test: /\.inline.svg$/,
+            svgoConfig: {
+              plugins: [
+                {
+                  name: "preset-default",
+                  params: {
+                    overrides: [
+                      { name: "removeViewBox", active: false },
+                    ],
+                  },
+                },
+                "prefixIds",
+              ],
+            },
+          },
+        ],
+      }
+    }
   ]
 };

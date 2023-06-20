@@ -1,0 +1,16 @@
+.container {
+  margin-top: auto;
+  text-align: center;
+}
+
+.menu {
+  padding: 11px;
+  background: rgb(139, 24, 27);
+  border: 1px solid rgb(139, 24, 27);
+  display: flex;
+  justify-content: center;
+}
+
+.copyright {
+  text-align: center;
+}

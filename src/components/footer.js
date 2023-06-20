@@ -1,40 +1,24 @@
 import React from 'react';
-import HeartIcon from './icons/heart';
-import HomeIcon from './icons/home';
-import SearchIcon from './icons/search';
-import UserIcon from './icons/user';
+import HeartIcon from './buttons/heart';
+import HomeIcon from './buttons/home';
+import SearchIcon from './buttons/search';
+import UserIcon from './buttons/user';
+import { container, menu, copyright } from './footer.module.css';
 
-
-// styles
-const footerStyles = {
-  textAlign: "center",
-  marginTop: "auto"
-}
-
-const menuStyles = {
-  // height: "46px",
-  padding: "11px",
-  background: "rgb(139, 24, 27)",
-  border: "1px solid rgb(139, 24, 27)"
-}
-
-const copyRightStyles = {
-  textAlign: "center"
-}
 
 const year = new Date().getFullYear();
 
 const Footer = ({children}) => {
   return (
-    <footer style={footerStyles}>
-      <div style={menuStyles}>
+    <footer className={container}>
+      <div className={menu}>
         <HomeIcon />
         <SearchIcon />
         <HeartIcon />
         <UserIcon />
         {children}
       </div>
-      <div style={copyRightStyles}>
+      <div className={copyright}>
         {`Copyright © Monsters Ink Tattoo ${year}`}
       </div>
     </footer>
