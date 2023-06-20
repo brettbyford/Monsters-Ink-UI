@@ -1,28 +1,23 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import Artists from "../components/artists"
 import Layout from "../components/layout"
-
-// styles
-const pageStyles = {
-  backgroundColor: "#000000",
-  color: "#ffffff",
-  margin: "auto",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  minHeight: "100vh",
-  display: "flex",
-  flexDirection: "column",
-}
+import { container, content } from "./index.module.css"
 
 // markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
+    <div className={container}>
+      <title>Monsters Ink Tatto - Home</title>
       <Layout>
+        <div className={content}>
+          <StaticImage 
+            alt="Monsters Ink Tattoo"
+            src="../assets/images/icon-512x512.png" />
+        </div>
         <Artists />
       </Layout>
-      
-    </main>
+    </div>
   )
 }
 
